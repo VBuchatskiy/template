@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { state, actions, mutations } from './root'
+import app from './app'
+import gif from './gif'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state,
-  actions,
-  mutations,
+  ...app,
   modules: {
+    gif
   }
 })

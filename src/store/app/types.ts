@@ -1,11 +1,13 @@
 type TNotification = 'error' | 'success'
 type TTheme = 'light' | 'dark'
+
 interface INotification {
   content: string
   type: TNotification
 }
 interface IRootState {
-  loading: boolean
+  loading: boolean,
+  query: string,
   theme: TTheme,
   notifications: Array<INotification>
 }
@@ -17,15 +19,17 @@ enum ETheme {
 
 enum ERootActions {
   SetNotification = 'SetNotification',
-  SetLoading = 'SetLoading',
+  SetLoadingState = 'SetLoadingState',
   SetColorTheme = 'SetColorTheme',
+  SetSearchQuery = 'SetSearchQuery',
   RemoveNotification = 'RemoveNotification'
 }
 
 enum ERootMutations {
   SetNotification = 'SetNotification',
-  SetLoading = 'SetLoading',
+  SetLoadingState = 'SetLoadingState',
   SetColorTheme = 'SetColorTheme',
+  SetSearchQuery = 'SetSearchQuery',
   RemoveNotification = 'RemoveNotification'
 }
 

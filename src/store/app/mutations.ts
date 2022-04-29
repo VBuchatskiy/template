@@ -2,7 +2,7 @@ import { MutationTree } from 'vuex'
 import { IRootState, INotification, ERootMutations, TTheme } from './types'
 
 const mutations: MutationTree<IRootState> = {
-  [ERootMutations.SetLoading] (state) {
+  [ERootMutations.SetLoadingState] (state) {
     state.loading = !state.loading
   },
 
@@ -10,12 +10,16 @@ const mutations: MutationTree<IRootState> = {
     notifications.push(notification)
   },
 
-  [ERootMutations.RemoveNotification] ({ notifications }, { index }: { index: number }) {
-    notifications.splice(index, 1)
-  },
-
   [ERootMutations.SetColorTheme] (state, { theme }: { theme: TTheme }) {
     state.theme = theme
+  },
+
+  [ERootMutations.SetSearchQuery] (state, { query }: { query: string }) {
+    state.query = query
+  },
+
+  [ERootMutations.RemoveNotification] ({ notifications }, { index }: { index: number }) {
+    notifications.splice(index, 1)
   }
 }
 

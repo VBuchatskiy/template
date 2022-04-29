@@ -1,5 +1,5 @@
 <template>
-  <hello-world />
+  <gif-gallery />
 </template>
 
 <script lang="ts">
@@ -8,7 +8,7 @@ import Component from 'vue-class-component'
 
 @Component({
   components: {
-    HelloWorld: () => import('@/components/HelloWorld.vue')
+    GifGallery: () => import('@/components/GifGallery.vue')
   }
 })
 export default class App extends Vue {}

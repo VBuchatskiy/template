@@ -16,16 +16,20 @@ const actions: ActionTree<IRootState, IRootState> = {
   },
 
   [ERootActions.RemoveNotification] ({ commit }, { index }: { index: number }) {
-    console.warn(index)
     commit(ERootMutations.RemoveNotification, { index })
   },
 
-  [ERootActions.SetLoading] ({ commit }) {
-    commit(ERootMutations.SetLoading)
+  [ERootActions.SetLoadingState] ({ commit }) {
+    // only for app loader
+    commit(ERootMutations.SetLoadingState)
   },
 
   [ERootActions.SetColorTheme] ({ commit }, { theme }: { theme: TTheme }) {
     commit(ERootMutations.SetColorTheme, { theme })
+  },
+
+  [ERootActions.SetSearchQuery] ({ commit }, { query }: { query: string }) {
+    commit(ERootMutations.SetSearchQuery, { query })
   }
 }
 
